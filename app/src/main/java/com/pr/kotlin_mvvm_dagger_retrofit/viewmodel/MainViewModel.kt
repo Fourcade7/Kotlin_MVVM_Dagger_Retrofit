@@ -6,11 +6,21 @@ import com.pr.kotlin_mvvm_dagger_retrofit.model.repository.MainRepository
 import com.pr.pr777.model.Posts
 
 class MainViewModel:ViewModel() {
-   val mylivedata=MutableLiveData<List<Posts>>()
+   var mylivedata=MutableLiveData<ArrayList<Posts>>()
+   val mainRepository: MainRepository
 
    init {
-      val mainRepository= MainRepository(this)
-      mainRepository.getAllposts()
+      mainRepository= MainRepository(this)
+   }
+
+
+   fun getAllPosts():MutableLiveData<ArrayList<Posts>>{
+      mylivedata=mainRepository.getAllposts()
+      return mylivedata
+   }
+
+   fun makeApicall(){
+      mainRepository.gorequest()
    }
 
 }
