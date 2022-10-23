@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
@@ -29,6 +30,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         textView=findViewById(R.id.textviewresponse)
         progressBar=findViewById(R.id.progressbar1)
+
+        val liveData=MutableLiveData<String>()
+        liveData.value="axaxax"
+
+        liveData.observe(this,{
+            textView.text=it
+        })
+        liveData.value="uaxaxax"
+
 
         val mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
         mainViewModel.makeApicall()
