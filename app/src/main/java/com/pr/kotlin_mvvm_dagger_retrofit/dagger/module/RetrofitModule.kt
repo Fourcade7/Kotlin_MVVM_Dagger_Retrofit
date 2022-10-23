@@ -1,18 +1,18 @@
-package com.pr.kotlin_mvvm_dagger_retrofit.dagger
+package com.pr.kotlin_mvvm_dagger_retrofit.dagger.module
 
-import com.pr.kotlin_mvvm_dagger_retrofit.Api
+import android.util.Log
+import com.pr.kotlin_mvvm_dagger_retrofit.model.api.Api
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 
 @Module
 class RetrofitModule {
 
     @Provides
-    fun provideApi(retrofit: Retrofit):Api{
+    fun provideApi(retrofit: Retrofit): Api {
         val api=retrofit.create(Api::class.java)
         return api
     }

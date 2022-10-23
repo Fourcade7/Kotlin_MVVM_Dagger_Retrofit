@@ -1,4 +1,4 @@
-package com.pr.kotlin_mvvm_dagger_retrofit
+package com.pr.kotlin_mvvm_dagger_retrofit.model.api
 
 import com.pr.pr777.model.Posts
 import retrofit2.Call
