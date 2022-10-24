@@ -1,4 +1,5 @@
-# Kotlin_MVVM_Dagger_Retrofit
+# Kotlin_MVVM_Dagger_Retrofit by PR7
+
 
     plugins {
         id 'com.android.application'
